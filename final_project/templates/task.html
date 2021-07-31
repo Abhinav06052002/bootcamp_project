@@ -1,0 +1,19 @@
+{% extends "todolist.html" %}
+{% block body %}
+<hr/>
+
+{% block table %}
+{% endblock %}
+<p>
+Add task in {{day}}
+  <form method="post" action="/page4">
+    <label for="task">Task Description</label>
+    <input name="task" type="text" id="task" required/>
+    
+    <label for="time">Due Time</label>
+    <input name="time" type="number" id="time" required/>
+    <div class="form-text">(Due time should be given as a single number and in 24 hour format eg: 6:30pm is 1830, 6:30am is 630)</div>
+    <input type="submit" value="Add Task">  
+  </form>  
+</p>  
+{% endblock %}

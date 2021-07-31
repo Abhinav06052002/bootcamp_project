@@ -1,0 +1,30 @@
+{% extends "task.html" %}
+{% block table %}
+
+<p>
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Task</th>
+      <th scope="col">Due-Time</th>
+      <th scope="col">Status</th>
+      <th scope="col">Done?</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task, due_time, status in tasks %}
+    <tr>
+      <td>{{task}}</td>
+      <td>{{due_time}}</td>
+      <td>{{status}}</td>
+      <td>
+          <form method="post" action="/page5/{{task}}">
+            <input name="task" id="done" type="submit" value="DONE">
+          </form>
+      </td>      
+    </tr>
+    {% endfor %}
+  </tbody>
+  </table>  
+</p>
+{% endblock %}  
